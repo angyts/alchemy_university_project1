@@ -29,3 +29,21 @@ The server folder contains a node.js server using [express](https://expressjs.co
 The application should connect to the default server port (3042) automatically! 
 
 _Hint_ - Use [nodemon](https://www.npmjs.com/package/nodemon) instead of `node` to automatically restart the server on any changes.
+
+### Home work specifications
+
+- Incorporate Public Key Cryptography so transfers can only be completed with a valid signature
+- The person sending the transaction should have to verify that they own the private key corresponding to the address that is sending funds
+
+### How I am going to implement this
+
+- Get user to sign transaction offline or MEW, generate the signature
+- Use signature to verify valid transaction, server will complete transaction
+- UX improvements: show before and after, and confirm
+- error validation: bad signature, invalid address, insufficient balance
+
+### Pseudocode
+
+- Generate a couple of key pairs
+- Change front end to accept signature instead
+- Allow backend to decipher signature and proof valid transaction
