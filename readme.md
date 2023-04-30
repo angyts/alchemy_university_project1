@@ -30,6 +30,9 @@ The application should connect to the default server port (3042) automatically!
 
 _Hint_ - Use [nodemon](https://www.npmjs.com/package/nodemon) instead of `node` to automatically restart the server on any changes.
 
+- I installed it as a dev requirement, so have to use `npx nodemon` to start instead.
+- To run the scripts: use `node scripts/helpers.js`
+
 ### Home work specifications
 
 - Incorporate Public Key Cryptography so transfers can only be completed with a valid signature
