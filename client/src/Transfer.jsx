@@ -25,6 +25,7 @@ function Transfer({ address, setBalance }) {
         message
       });
       setBalance(balance);
+      alert("Your signature is valid and the funds has been transferred!");
     } catch (ex) {
       alert(ex.response.data.message);
     }
@@ -40,6 +41,10 @@ function Transfer({ address, setBalance }) {
           placeholder="1, 2, 3..."
           value={sendAmount}
           onChange={setValue(setSendAmount)}
+          required
+          type="number" 
+          step="1"
+          min="1"
         ></input>
       </label>
 
@@ -49,8 +54,11 @@ function Transfer({ address, setBalance }) {
           placeholder="Type an address, for example: 0x2"
           value={recipient}
           onChange={setValue(setRecipient)}
+          required
         ></input>
       </label>
+
+      <label><h2>I presumed you have obtained your signature offline</h2></label>
 
       <label>
         Signature "r"
@@ -58,6 +66,7 @@ function Transfer({ address, setBalance }) {
           placeholder="The first part of the signature"
           value={r}
           onChange={setValue(setR)}
+          required
         ></input>
       </label>
 
@@ -67,6 +76,7 @@ function Transfer({ address, setBalance }) {
           placeholder="The second part of the signature"
           value={s}
           onChange={setValue(setS)}
+          required
         ></input>
       </label>
 
@@ -79,7 +89,7 @@ function Transfer({ address, setBalance }) {
         ></input>
       </label>      
 
-      <input type="submit" className="button" value="Transfer" />
+      <input type="submit" className="button" value="I confirm the transfer" />
     </form>
   );
 }
